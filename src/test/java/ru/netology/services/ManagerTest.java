@@ -93,6 +93,18 @@ public class ManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+    @Test
+    public void ShouldFindLastIfOne() {
+        MoviesManager manager = new MoviesManager();
 
+        manager.add("Movie 1");
+
+
+
+        String[] actual = manager.findLast();
+        String[] expected = {"Movie 1"};
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
 
 }
