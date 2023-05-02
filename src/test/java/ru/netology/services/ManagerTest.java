@@ -1,4 +1,3 @@
-
 package ru.netology.services;
 
 import org.junit.jupiter.api.Assertions;
@@ -93,12 +92,12 @@ public class ManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void ShouldFindLastIfOne() {
         MoviesManager manager = new MoviesManager();
 
         manager.add("Movie 1");
-
 
 
         String[] actual = manager.findLast();
@@ -118,7 +117,6 @@ public class ManagerTest {
         manager.add("Movie 4");
         manager.add("Movie 5");
         manager.add("Movie 6");
-
 
 
         String[] actual = manager.findLast();
@@ -141,9 +139,8 @@ public class ManagerTest {
         manager.add("Movie 7");
 
 
-
         String[] actual = manager.findLast();
-        String[] expected = {"Movie 7", "Movie 6", "Movie 5", "Movie 4", "Movie 3","Movie 2"};
+        String[] expected = {"Movie 7", "Movie 6", "Movie 5", "Movie 4", "Movie 3", "Movie 2"};
         Assertions.assertArrayEquals(expected, actual);
 
     }
