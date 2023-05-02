@@ -107,4 +107,45 @@ public class ManagerTest {
 
     }
 
+    @Test
+    public void ShouldFindLastIfMoreFiveLimit() {
+        MoviesManager manager = new MoviesManager();
+
+
+        manager.add("Movie 1");
+        manager.add("Movie 2");
+        manager.add("Movie 3");
+        manager.add("Movie 4");
+        manager.add("Movie 5");
+        manager.add("Movie 6");
+
+
+
+        String[] actual = manager.findLast();
+        String[] expected = {"Movie 6", "Movie 5", "Movie 4", "Movie 3", "Movie 2"};
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
+    @Test
+    public void ShouldFindLastIfMoreSixLimit() {
+        MoviesManager manager = new MoviesManager(6);
+
+
+        manager.add("Movie 1");
+        manager.add("Movie 2");
+        manager.add("Movie 3");
+        manager.add("Movie 4");
+        manager.add("Movie 5");
+        manager.add("Movie 6");
+        manager.add("Movie 7");
+
+
+
+        String[] actual = manager.findLast();
+        String[] expected = {"Movie 7", "Movie 6", "Movie 5", "Movie 4", "Movie 3","Movie 2"};
+        Assertions.assertArrayEquals(expected, actual);
+
+    }
+
 }
